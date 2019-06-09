@@ -4,7 +4,7 @@ import (
 	"net"
 	"fmt"
 	"os"
-	"io"
+	// "io"
 )
 
 func main() {
@@ -39,8 +39,11 @@ func handleRequest(conn net.Conn, port string) {
 	conn.Write([]byte("Hello! From goservice.go"))
 
 	// What happens if the user closes their connection?
-	_, err := conn.Read(make([]byte, 0))
-	if err != io.EOF {
-		fmt.Println("Remote user closed connection:", conn.RemoteAddr())
-	}
+	// TODO: This seems a little half-baked so maybe redo it better in a future
+	// iteration.
+	//
+	// _, err := conn.Read(make([]byte, 0))
+	// if err != io.EOF {
+	// 	fmt.Println("Remote user closed connection:", conn.RemoteAddr())
+	// }
 }
