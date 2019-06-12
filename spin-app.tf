@@ -17,7 +17,6 @@ variable "ami" {
   # Ubuntu Server 18.04 LTS (HVM), SSD Volume Type, x64
 }
 
-
 provider "aws" {
   version = "~> 2.0"
   region  = "us-east-1"
