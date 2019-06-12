@@ -77,20 +77,12 @@ resource "aws_security_group" "spin-app-ssh" {
   }
 }
 
-resource "aws_instance" "spin-app-tcp1" {
+resource "aws_instance" "spin-app-tcp" {
   ami                    = "${var.ami}"
   instance_type          = "t2.micro"
   vpc_security_group_ids = ["${aws_security_group.spin-app-ssh.id}"]
+  key_name               = "jahio"
   tags = {
     Name = "spin-app-tcp1"
-  }
-}
-
-resource "aws_instance" "spin-app-tcp2" {
-  ami                    = "${var.ami}"
-  instance_type          = "t2.micro"
-  vpc_security_group_ids = ["${aws_security_group.spin-app-ssh.id}"]
-  tags = {
-    Name = "spin-app-tcp2"
   }
 }
