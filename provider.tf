@@ -14,6 +14,7 @@
 #
 variable "ami" {
   default = "ami-024a64a6685d05041"
+  # Ubuntu Server 18.04 LTS (HVM), SSD Volume Type, x64
 }
 
 
